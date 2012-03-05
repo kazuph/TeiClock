@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/reset.css" />
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="script/lib/jquery.timers.js"></script>
+<script type="text/javascript" src="script/lib/jquery.fittext.js"></script>
+<script type="text/javascript" src="script/src/script.js"></script>
+<title>全体会議用タイマー</title>
+</head>
+
+<body class="setting">
+
+<div id="header">
+	<p id="targetNameText">
+	    StaffMeeting 
+	</p>
+	<p id="smallText">
+        予定時間
+	</p>
+	<p id="targetTimerText">
+    <span id="yoteiMin">00</span> : <span id="yoteiSec">00</span>
+	</p>
+	<ul id="menuList">
+		<li>
+            <input id='startButton' type='button' value='start'>
+            <input id='endButton' type='button' value='end'>
+			<img id="setting" src="images/icon/setting.png" width="30" height="30" />
+		</li>
+	</ul>
+</div>
+
+<div id="mainArea">
+	<p id="timerText">
+<!--		<span id="hr">00</span>
+		<span class="coron">:</span>	-->
+		<span id="min">00</span>
+		<span class="coron">:</span>
+		<span id="sec">00</span>
+	</p>
+</div>
+
+<div id="settingArea">
+	<div id="settingAreaInner">
+		<table id="entryAddTable">
+			<tbody>
+				<tr>
+					<th colspan="3">
+						<p>EntryAdd</p>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input class="entryName" type="text" value="部署名入力" />
+					</td>
+					<td>
+						<p>
+							<input class="entryMin" type="text" value="12" maxlength="2" />
+							<span>:</span>
+							<input class="entrySec" type="text" value="00" maxlength="2" />
+						</p>
+					</td>
+					<td>
+						<input class="entryAddButton1" type="button" value="Add" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+                        <input class="entryName" type="text" value="質疑応答" />
+					</td>
+					<td>
+						<p>
+							<input class="entryMin" type="text" value="01" maxlength="2" />
+							<span>:</span>
+							<input class="entrySec" type="text" value="00" maxlength="2" />
+						</p>
+					</td>
+					<td>
+						<input class="entryAddButton2" type="button" value="Add" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="entryName" type="text" value="コメント" />
+					</td>
+					<td>
+						<p>
+							<input class="entryMin" type="text" value="02" maxlength="2" />
+							<span>:</span>
+							<input class="entrySec" type="text" value="00" maxlength="2" />
+						</p>
+					</td>
+					<td>
+						<input class="entryAddButton3" type="button" value="Add" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table id="entryListTable">
+			<tbody>
+				<tr>
+					<th>
+						<p>EntryList</p>
+					</th>
+					<th>
+					</th>
+					<th>
+						<p class="align-center">発表時間</p>
+					</th>
+					<th>
+						<p class="align-center">予定時間</p>
+					</th>
+					<th>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>
