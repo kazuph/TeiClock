@@ -1,74 +1,130 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/reset.css" />
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="script/lib/jquery.timers.js"></script>
+<script type="text/javascript" src="script/lib/jquery.fittext.js"></script>
+<script type="text/javascript" src="script/src/script.js"></script>
+<title>全体会議用タイマー</title>
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Teiclock : This is a presentation timer." />
+<body class="setting">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<div id="header">
+    <p id="targetNameText">
+        StaffMeeting
+    </p>
+    <p id="smallText">
+        予定時間
+    </p>
+    <p id="targetTimerText">
+    <span id="yoteiMin">00</span> : <span id="yoteiSec">00</span>
+    </p>
+    <ul id="menuList">
+        <li>
+            <input id='startButton' type='button' value='start'>
+            <input id='endButton' type='button' value='end'>
+            <img id="setting" src="images/icon/setting.png" width="30" height="30" />
+        </li>
+    </ul>
+</div>
 
-    <title>Teiclock</title>
-  </head>
+<div id="mainArea">
+    <p id="timerText">
+<!--        <span id="hr">00</span>
+        <span class="coron">:</span>    -->
+        <span id="min">00</span>
+        <span class="coron">:</span>
+        <span id="sec">00</span>
+    </p>
+</div>
 
-  <body>
+<div id="settingArea">
+    <div id="settingAreaInner">
+        <table id="entryAddTable">
+            <tbody>
+                <tr>
+                    <th colspan="3">
+                        <p>EntryAdd</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="entryName" type="text" value="部署名入力" />
+                    </td>
+                    <td>
+                        <p>
+                            <input class="entryMin" type="text" value="12" maxlength="2" />
+                            <span>:</span>
+                            <input class="entrySec" type="text" value="00" maxlength="2" />
+                        </p>
+                    </td>
+                    <td>
+                        <input class="entryAddButton1" type="button" value="Add" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="entryName" type="text" value="質疑応答" />
+                    </td>
+                    <td>
+                        <p>
+                            <input class="entryMin" type="text" value="01" maxlength="2" />
+                            <span>:</span>
+                            <input class="entrySec" type="text" value="00" maxlength="2" />
+                        </p>
+                    </td>
+                    <td>
+                        <input class="entryAddButton2" type="button" value="Add" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="entryName" type="text" value="コメント" />
+                    </td>
+                    <td>
+                        <p>
+                            <input class="entryMin" type="text" value="02" maxlength="2" />
+                            <span>:</span>
+                            <input class="entrySec" type="text" value="00" maxlength="2" />
+                        </p>
+                    </td>
+                    <td>
+                        <input class="entryAddButton3" type="button" value="Add" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/kazuph/TeiClock">View on GitHub</a>
-
-          <h1 id="project_title">Teiclock</h1>
-          <h2 id="project_tagline">This is a presentation timer.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/kazuph/TeiClock/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/kazuph/TeiClock/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+        <table id="entryListTable">
+            <tbody>
+                <tr>
+                    <th>
+                        <p>EntryList</p>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                        <p class="align-center">発表時間</p>
+                    </th>
+                    <th>
+                        <p class="align-center">予定時間</p>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Teiclock maintained by <a href="https://github.com/kazuph">kazuph</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</body>
 </html>
