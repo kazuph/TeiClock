@@ -39,7 +39,7 @@ $(function() {
     var wHeight = $(window).height();
 
     /* set fitText */
-    var $txt = $timerText.fitText(0.3).css("top",(wHeight - $timerText.height()) / 2);
+    var $txt = $timerText.fitText(0.4).css("top",(wHeight - $timerText.height()) / 2);
     // var $txt = $timerText.fitText(0.5);
 
     $("input#startButton").click(headerStartTimer);
