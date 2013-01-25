@@ -1,7 +1,7 @@
 // JavaScript Document
 $(function() {
 
-    audio = new Audio("./script/src/end.wav");
+    audio = new Audio("./js/src/end.wav");
 
     timerBoxWidth = $("p#timerText").width();
     timerNumWidth = "";
