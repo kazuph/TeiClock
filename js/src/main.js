@@ -43,6 +43,7 @@ $(function() {
     // var $txt = $timerText.fitText(0.5);
 
     $("input#startButton").click(headerStartTimer);
+    $("input#resetButton").click(resetTimer);
     $("input#endButton").click(endTimer);
 
     $("img#setting").click(settingOpener);
@@ -59,6 +60,23 @@ $(function() {
     });
 });
 
+function resetTimer(){
+        console.log('acrionin'+$o.tmMin[0].innerHTML+':'+$o.tmSec[0].innerHTML);
+        endTimer();
+
+        var set_min =  eval($o.find('.setMin')[0].innerHTML);
+        var set_sec =  eval($o.find('.setSec')[0].innerHTML);
+        
+        console.log(set_min);
+        $timerTextMin.text(set_min);
+        $timerTextSec.text(zeroformat(set_sec,2));
+        timerCount=0;
+    //    eval($o.tmMin[0].innerHTML) = set_min;
+     //   eval($o.tmSec[0].innerHTML) = set_sec;
+        $o.tmSec.html(set_sec);
+        $o.tmMin.html(set_min);
+}
+
 function headerStartTimer() {
     if(startFlag == 0 && $o.length){
         timerAction();
@@ -73,7 +91,9 @@ function startTimer(evt) {
         $o = evt.data.obj;
         $o.tmMin = $o.find('.tmMin');
         $o.tmSec = $o.find('.tmSec');
-
+        $o.setMin = $o.find('.setMin');
+        $o.setSec = $o.find('.setSec');
+        
         //ヘッダーの文字設定
         $("#targetNameText").text(name);
         $("#yoteiMin").text(eval(evt.data.min));
