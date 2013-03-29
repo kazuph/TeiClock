@@ -2,6 +2,11 @@ TeiClock
 ================
 会議が定刻に終わることから名付けられた。
 会議やミーティングなどで使ってください。
+
+以下のページにアクセスするとすぐ使えます。
+
+http://kazuph.github.com/TeiClock/
+
 License
 ================
     Copyright 2012 Kazuhiro Homma
